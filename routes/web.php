@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//* CREATE
+Route::get('/create/ad', AdController::class, ('create'))->name('ad.create');
+Route::post('/save/ad', AdController::class,('store'))->name('ad.store');
