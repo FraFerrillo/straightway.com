@@ -35,8 +35,9 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
-        // $ad = Ad::create($request)
-        // return redirect()->back()->with('message','Congratulation ,ad is successfully created!');
+        $ad = Ad::create($request->all());
+
+        return redirect()->back()->with('message','Congratulation ,ad is successfully created!');
     }
 
     /**
